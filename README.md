@@ -5,6 +5,11 @@
 - [x] Send Push Notification
 - [x] Customise as JSON Payload
 
+## Pre-requisite
+
+1. **Device Token** which you will get as callback (in AppDelegate.swift) when you register for Push Notification.
+2. **PEM Certificate** of your app which you get from Apple Developer Portal.
+
 ### Installation
 
 You can install [apnsPHP](https://packagist.org/packages/apns/apnsphp) via **Composer**.
@@ -28,9 +33,15 @@ composer install
 
 1. Send Push Notification when you've text only
 
+I'm assuming you have **pem** certificate with you.
+
 ```php
 
-$apns = new apnsPHP();
+//Path of Certfiicate
+$pathOfCertificate = $_SERVER['DOCUMENT_ROOT']."/certificate.pem";
+
+// Initialise APNS
+$apns = new apnsPHP($pathOfCertificate);
 $apns->sendPushNotification("This is my Message", $token);
 
 ```
@@ -66,7 +77,7 @@ And, last you have to call APNS method.
 
 ```php
 
-$apns = new apnsPHP();
+$apns = new apnsPHP($pathOfCertificate);
 $apns->sendPushNotification($payloadJSON, $token);
 
 ```
