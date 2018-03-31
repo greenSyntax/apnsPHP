@@ -7,7 +7,7 @@
 
 ### Installation
 
-You can install apnsPHP via Composer.
+You can install [apnsPHP](https://packagist.org/packages/apns/apnsphp) via **Composer**.
 First, add **composer.json** file in your project
 
 ```json
@@ -41,10 +41,10 @@ As, Apple Push Notification payload looks like this where, **alert** is the push
 
 ```json
 {
-  aps:{
-    'alert' : 'Hello World :D',
-    'badge' : '1',
-    'sound' : 'default'
+  "aps":{
+    "alert" : "Hello World :D",
+    "badge" : 1,
+    "sound" : "default"
   }
 }
 ```
