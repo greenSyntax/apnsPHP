@@ -5,7 +5,7 @@
 - [x] Send Push Notification
 - [x] Customise as JSON Payload
 
-## Pre-requisite
+### Pre-requisite
 
 1. **Device Token** which you will get as callback (in AppDelegate.swift) when you register for Push Notification.
 2. **PEM Certificate** of your app which you get from Apple Developer Portal.
